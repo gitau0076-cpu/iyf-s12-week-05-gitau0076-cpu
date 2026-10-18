@@ -1,0 +1,13 @@
+.highlight {
+     background-color: #d1ce12; 
+    }
+        .container { 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+        }
+        .hidden { 
+            display: none; 
+        }
+        .accent {
+            color: #8e2a5b;
+         }
