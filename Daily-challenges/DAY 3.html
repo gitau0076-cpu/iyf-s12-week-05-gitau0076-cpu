@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Image Remover</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        .controls { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        button { padding: 0.6rem 0.9rem; font: inherit; cursor: pointer; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+        .gallery img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; }
+        #status { min-height: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>Day 3: Image Remover</h1>
+    <p>Remove every image from the page, or hide and show them.</p>
+
+    <div class="controls">
+        <button type="button" id="remove-images">Remove all images</button>
+        <button type="button" id="toggle-images" aria-pressed="false">Hide images</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+        <img src="https://picsum.photos/id/1015/440/280" alt="Mountain river flowing through a green landscape">
+        <img src="https://picsum.photos/id/1025/440/280" alt="Dog looking toward the camera">
+        <img src="https://picsum.photos/id/1039/440/280" alt="Mountain peaks beneath a cloudy sky">
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <script>
+        const gallery = document.getElementById("gallery");
+        const removeButton = document.getElementById("remove-images");
+        const toggleButton = document.getElementById("toggle-images");
+        const status = document.getElementById("status");
+
+        removeButton.addEventListener("click", () => {
+            const images = gallery.querySelectorAll("img");
+            images.forEach((image) => image.remove());
+            status.textContent = images.length
+                ? "All images were removed."
+                : "There are no images left to remove.";
+        });
+
+        toggleButton.addEventListener("click", () => {
+            const images = gallery.querySelectorAll("img");
+            if (!images.length) {
+                status.textContent = "There are no images to show or hide.";
+                return;
+            }
+
+            const areHidden = toggleButton.getAttribute("aria-pressed") !== "true";
+            images.forEach((image) => {
+                image.hidden = areHidden;
+            });
+            toggleButton.setAttribute("aria-pressed", String(areHidden));
+            toggleButton.textContent = areHidden ? "Show images" : "Hide images";
+            status.textContent = areHidden ? "Images are hidden." : "Images are visible.";
+        });
+    </script>
+</body>
+</html>
