@@ -9,6 +9,8 @@
         .container { padding: 20px; border: 1px solid #ccc; }
         .hidden { display: none; }
         .accent { color: #8e2a5b; }
+        .completed { text-decoration: line-through; color: #57606a; }
+        .demo-box { padding: 12px; border: 1px solid #aaa; margin: 8px 0; }
     </style>
 </head>
 <body>
@@ -40,10 +42,32 @@
                 <input type="email" id="email" name="email" placeholder="name@gmail.com">
                 <button type="submit">Submit</button>
             </form>
+            <p id="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>Dynamic Elements and Event Delegation</h2>
+            <button type="button" id="add-paragraph">Add paragraph</button>
+            <div id="paragraph-list"></div>
+
+            <form id="task-form">
+                <label for="task-input">New task</label>
+                <input type="text" id="task-input" required>
+                <button type="submit">Add task</button>
+            </form>
+            <ul id="task-list"></ul>
+        </section>
+
+        <section id="grandparent" class="demo-box">
+            Grandparent area
+            <div id="parent" class="demo-box">
+                Parent area
+                <button type="button" id="child">Click child to see event bubbling</button>
+            </div>
         </section>
 
         <section id="injection-demo">
-            <h2>`<img src="x" onerror="alert('hacked!')"></h2>
+            <h2>Safe text example</h2>
             <div id="unsafe"></div>
             <div id="safe"></div>
         </section>
