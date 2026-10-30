@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Dynamic Element Creator</title>
+    <style>
+        body {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 0.5rem 0.8rem;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .paragraph-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .paragraph-item p { margin: 0; }
+    </style>
+</head>
+<body>
+    <h1>Day 2: Dynamic Element Creator</h1>
+    <button type="button" id="add-paragraph">Add Paragraph</button>
+    <section id="paragraph-list" aria-label="Created paragraphs"></section>
+
+    <script>
+        const addButton = document.getElementById("add-paragraph");
+        const paragraphList = document.getElementById("paragraph-list");
+        let paragraphCount = 0;
+
+        addButton.addEventListener("click", () => {
+            paragraphCount += 1;
+
+            const item = document.createElement("div");
+            item.className = "paragraph-item";
+
+            const paragraph = document.createElement("p");
+            paragraph.textContent = `Paragraph ${paragraphCount}`;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.textContent = "Delete";
+            deleteButton.setAttribute("aria-label", `Delete paragraph ${paragraphCount}`);
+            deleteButton.addEventListener("click", () => item.remove());
+
+            item.append(paragraph, deleteButton);
+            paragraphList.appendChild(item);
+        });
+    </script>
+</body>
+</html>

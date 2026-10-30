@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Color Changer</title>
+    <style>
+        body {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 0.7rem 1rem;
+            font: inherit;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Day 1: Color Changer</h1>
+    <h2>Click the button to change my color</h2>
+    <h3>All headings change together</h3>
+    <p>Each click picks a random hex color for every heading.</p>
+    <button type="button" id="change-color">Change heading colors</button>
+
+    <script>
+        const changeColorButton = document.getElementById("change-color");
+
+        function randomHexColor() {
+            return `#${Math.floor(Math.random() * 0x1000000)
+                .toString(16)
+                .padStart(6, "0")}`;
+        }
+
+        changeColorButton.addEventListener("click", () => {
+            const color = randomHexColor();
+            document.querySelectorAll("h1, h2, h3").forEach((heading) => {
+                heading.style.color = color;
+            });
+        });
+    </script>
+</body>
+</html>
