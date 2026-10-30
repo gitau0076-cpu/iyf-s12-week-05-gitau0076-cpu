@@ -1,57 +1,64 @@
-# Florence Nyanjihia Gitau - Week 05
+# Florence Nyanjihia Gitau — Week 05 Project
 
-A dynamic, interactive web application built with vanilla JavaScript, HTML5, and CSS3. This project demonstrates core Document Object Model (DOM) manipulation techniques, event handling, user input validation.
+This repository contains the Week 5 DOM practice exercises and an interactive To-Do List mini-project. It uses HTML, CSS, and vanilla JavaScript to demonstrate DOM manipulation, event handling, form submissions, and event delegation.
 
-## Live Page
+## To-Do List Features
 
-## Screen Shot
+- Add tasks and prevent empty submissions.
+- Mark tasks complete and delete them.
+- Filter tasks by all, active, or completed status.
+- Edit a task by double-clicking its text; press Enter to save or Escape to cancel.
+- View the number of remaining tasks and clear completed tasks.
 
-## Features
-- Element Selection & Traversal: Efficiently queries and navigates the DOM tree using modern methods (`querySelector`, `querySelectorAl`, and parent/child navigation).
-- Dynamic Content & Attribute Modification: Programmatically updates text content, HTML structures, and element attributes while maintaining strict security boundaries against XSS vulnerabilities.
-- Interactive To-Do List: Allows users to add, complete, and remove tasks dynamically with real-time UI updates.
-- Event-Driven Architecture: Listens and responds to user interactions (clicks, keypresses) using clean event listeners.
-## Technologies Used
-- HTML5: Semantic markup structure for the application interface.
-- CSS3: Modern styling, and responsive design principles
-- JavaScript: Core logic, DOM manipulation, and asynchronous state handling.
-- VS Code: Development environment equipped with AI-assisted coding and live preview tools.
+## Practice Work
 
-## Project Structure
-``` text
+- [DOM practice page](./dom-practice.html) — Lessons 9–10 selection, traversal, content updates, attributes, dynamic elements, forms, events, bubbling, and delegation.
+- [Daily challenges](./daily-challenges/) — five DOM interaction exercises.
 
+## Technologies
 
+- HTML5
+- CSS3
+- JavaScript
+- Git and GitHub
 
+## Repository Structure
 
-
-
-
-
-
-
+```text
+iyf-s12-week-05-gitau0076-cpu/
+├── index.html          # To-Do List mini-project
+├── styles.css
+├── app.js
+├── dom-practice.html   # Lessons 9–10 practice page
+├── dom.js
+├── daily-challenges/
+├── .gitignore
+└── README.md
 ```
 
 ## What I Learned
-- Event delegation.
-- Selected elements using getElementById, querySelector, and querySelectorAll.
-- Traversed the DOM through parent, child, and sibling elements.
-- Updated text, HTML, styles, attributes, and data attributes.
-- Created and removed elements with JavaScript.
-- Handled clicks, keyboard input, and form submissions with event listeners.
-- Used event bubbling and delegation for dynamically added tasks.
-- Combined these skills to build an interactive To-Do List.
 
-## Challenges I Faced
-- Selecting the correct DOM elements and keeping selectors consistent with the HTML.
-- Keeping task data and the rendered page in sync.
-- Using event delegation for tasks added after the page loaded.
-- Managing completion, filters, editing, deletion, and item counts together.
-- Preventing empty tasks and handling form submissions correctly.
+- Select and traverse elements in the DOM.
+- Update text, HTML, styles, attributes, and data attributes.
+- Create and remove elements dynamically.
+- Handle click, keyboard, and form events.
+- Use event bubbling and delegation to manage dynamic content.
+- Keep application state and the rendered page in sync.
+
+## Challenges Faced
+
+- Keeping selectors consistent with the page markup.
+- Managing task state while filtering, editing, and completing items.
+- Handling events on elements added after the page loads.
+- Preventing empty form submissions and updating the remaining-item count correctly.
 
 ## Future Improvements
-- Improve the layout and test each page on mobile screens.
-- Add clearer feedback when tasks are added, edited, or deleted. 
+
+- Save tasks between visits using `localStorage`.
+- Improve and check the layout on smaller screens.
+- Add clearer feedback when tasks are added, edited, or deleted.
 
 ## Contact
-- GitHub  https://github.com/gitau0076-cpu/gitau0076-cpu
-- Email  gitau0076@gmail.com
+
+- GitHub: [@gitau0076-cpu](https://github.com/gitau0076-cpu)
+- Email: gitau0076@gmail.com
