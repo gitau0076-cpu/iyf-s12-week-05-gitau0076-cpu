@@ -1,11 +1,12 @@
 # Florence Nyanjihia Gitau — Week 05 Project
 
 This repository contains the Week 5 DOM practice exercises and an interactive To-Do List mini-project. It uses HTML, CSS, and vanilla JavaScript to demonstrate DOM manipulation, event handling, form submissions, and event delegation.
+
 ## Live Page
 [My Live Page](https://gitau0076-cpu.github.io/iyf-s12-week-05-gitau0076-cpu/)
 
 ## Screen Shot
-
+[To-Do List screenshot](./new%20screen%20shot.JPG)
 ## To-Do List Features
 - Add tasks and prevent empty submissions.
 - Mark tasks complete and delete them.
