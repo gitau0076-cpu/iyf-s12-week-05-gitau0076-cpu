@@ -16,12 +16,10 @@ console.log("article next sibling:", article.nextElementSibling);
 // Change text, add trusted HTML, and safely display user-provided text.
 const articleTitle = article.querySelector(".title");
 articleTitle.textContent = "DOM Practice";
-article.insertAdjacentHTML("beforeend", "<p class='content'>This paragraph was added with trusted HTML.</p>");
+article.insertAdjacentHTML("beforeend", "<p class='content highlight'>This paragraph was added with trusted HTML.</p>");
 const unsafe = document.getElementById("unsafe");
 const safe = document.getElementById("safe");
-const exampleInput = "<strong>This is shown as text, not interpreted as HTML.</strong>";
-unsafe.innerHTML = "<p>Use innerHTML only for HTML you control.</p>";
-safe.textContent = exampleInput;
+const userInput = `<img src="x" onerror="alert('hacked!')">`;
 
 // Read and update attributes and data attributes.
 const articleElement = document.querySelector("article[data-id]");
@@ -63,6 +61,11 @@ contactForm.addEventListener("submit", (event) => {
     const email = document.getElementById("email").value.trim();
     document.getElementById("form-message").textContent =
         name && email ? `Thanks, ${name}. The form was submitted.` : "Please enter your name and email.";
+
+    if (name && email) {
+        unsafe.innerHTML = userInput;
+        safe.textContent = userInput;
+    }
 });
 
 // Event delegation: one click listener on the parent UL handles every task,
