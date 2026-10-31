@@ -42,9 +42,11 @@ function createTodoElement(todo) {
 
         item.appendChild(editInput);
     } else {
-        const text = document.createElement("span");
+        const text = document.createElement("button");
+        text.type = "button";
         text.className = "todo-text";
         text.textContent = todo.text;
+        text.setAttribute("aria-label", `${todo.completed ? "Mark" : "Complete"} ${todo.text}`);
         item.appendChild(text);
     }
 
